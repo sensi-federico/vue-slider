@@ -5,6 +5,8 @@ createApp({
     data() {
         return {
             activeImage: 0,
+            intervalId: null,
+            play: null,
             slides: [
                 {
                     image: './assets/img/01.webp',
@@ -32,7 +34,7 @@ createApp({
                     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                 }
             ],
-            thumb : {
+            thumb: {
                 images: [
                     './assets/img/01.webp',
                     './assets/img/02.webp',
@@ -47,19 +49,28 @@ createApp({
         nextImage() {
             this.activeImage++
             console.log(this.activeImage)
-            if(this.activeImage === this.slides.length){
+            if (this.activeImage === this.slides.length) {
                 this.activeImage = 0
-            }   
+            }
         },
         prevImage() {
             this.activeImage--
             console.log(this.activeImage)
-            if(this.activeImage === -1){
-                this.activeImage = this.slides.length -1
+            if (this.activeImage === -1) {
+                this.activeImage = this.slides.length - 1
             }
         },
         changeImage(index) {
             this.activeImage = index
+        },
+        startAutoPlay() {
+            this.play = true
+            this.intervalId = setInterval(() => {
+                this.nextImage()
+            }, 3000)
         }
+    },
+    mounted() {
+        this.startAutoPlay()
     }
 }).mount('#app') 
