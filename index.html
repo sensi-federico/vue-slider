@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
+    <title>Slider</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slider</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
+    integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=='
+    crossorigin='anonymous' referrerpolicy='no-referrer' />
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
@@ -14,9 +17,12 @@
     <div id="app">
 
         <div class="container">
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" tabindex="0" @mouseenter="stopAutoPlay" @mouseleave="startAutoPlay">
 
+                
                 <div class="item">
+                    <i class="fa fa-play-circle" aria-hidden="true" v-if="play"></i>
+                    <i class="fa fa-pause-circle" aria-hidden="true" v-else></i>
                     <img :src="slides[activeImage].image" :alt="slides[activeImage].title" />
                     <div class="text">
                         <h3>{{slides[activeImage].title}}</h3>

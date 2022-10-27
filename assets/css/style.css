@@ -103,3 +103,12 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     left: 50%;
     transform: translate(-50%) rotate(135deg);
 }
+
+.fa {
+    position: absolute;
+    color: white;
+    top: 40%;
+    left: 45%;
+    font-size: 50px;
+    opacity: 0.5;
+}

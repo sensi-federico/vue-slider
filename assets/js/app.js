@@ -68,6 +68,10 @@ createApp({
             this.intervalId = setInterval(() => {
                 this.nextImage()
             }, 3000)
+        },
+        stopAutoPlay(){
+            this.play = false
+            clearInterval(this.intervalId)
         }
     },
     mounted() {
