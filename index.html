@@ -29,12 +29,13 @@
                 <div class="thumbs">
                     <div class="prev" @click="prevImage"></div>
                     <div class="next" @click="nextImage"></div>
-                    <div class="thumbnails">
+                    <div class="thumb">
                         <img class="thumb"
                         :class="activeImage === i ? 'active' : ''" 
                         :src="thumb" alt="slides[activeImage].title" 
-                        v-for="(thumb,i) in thumb.images"  />
+                        v-for="(thumb,i) in thumb.images" @click="changeImage(i)"  />
                     </div>
+
                 </div>
 
             </div>

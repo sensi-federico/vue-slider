@@ -57,6 +57,9 @@ createApp({
             if(this.activeImage === -1){
                 this.activeImage = this.slides.length -1
             }
+        },
+        changeImage(index) {
+            this.activeImage = index
         }
     }
 }).mount('#app') 
