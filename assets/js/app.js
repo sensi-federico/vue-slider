@@ -46,7 +46,7 @@ createApp({
             this.activeImage--
             console.log(this.activeImage)
             if(this.activeImage === -1){
-                this.activeImage = 4
+                this.activeImage = this.slides.length -1
             }
         }
     }
